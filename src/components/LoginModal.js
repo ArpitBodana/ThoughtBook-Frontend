@@ -71,7 +71,7 @@ function LoginModal() {
         <div style={{margin:30,padding:20}}>
 
             <Modal backdrop="static" show={modalshow} onHide={modalhide}>
-                <Modal.Header className="bg-success text-light" closeButton>
+                <Modal.Header className="bg-warning " closeButton>
                     <Modal.Title>Log In </Modal.Title>
                 </Modal.Header >
                 <Modal.Body>
@@ -90,7 +90,7 @@ function LoginModal() {
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={handleLogin} variant='outline-success'>LogIn</Button>
+                    <Button onClick={handleLogin} variant='outline-warning'>LogIn</Button>
                 </Modal.Footer>
             </Modal>
            

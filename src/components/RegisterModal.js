@@ -58,7 +58,7 @@ function RegisterModal() {
         <div style={{margin:30,padding:20}}>
             {/* <h4>If you are not registered on ThoughtBook  </h4><Button variant='danger' onClick={handleShow}>Register/SignUp</Button> */}
             <Modal backdrop="static" show={show}    onHide={handleHide}>
-                <Modal.Header className='bg-success text-light' closeButton>
+                <Modal.Header className='bg-danger text-light' closeButton>
                     <Modal.Title>Registeration Form</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -83,7 +83,7 @@ function RegisterModal() {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant='outline-success' onClick={handleSubmit} >Submit</Button>
+                    <Button variant='outline-danger' onClick={handleSubmit} >Submit</Button>
                 </Modal.Footer>
             </Modal>
             

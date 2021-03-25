@@ -56,7 +56,7 @@ function Changepassword() {
     return (
         <div>
             <Modal backdrop="static" show={modalshow} onHide={modalhide}>
-                <Modal.Header className="bg-success text-light" closeButton>
+                <Modal.Header className="bg-secondary text-light" closeButton>
                     <Modal.Title>Change Password </Modal.Title>
                 </Modal.Header >
                 <Modal.Body>
@@ -78,7 +78,7 @@ function Changepassword() {
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={handleChange} variant='outline-success'>Change Password</Button>
+                    <Button onClick={handleChange} variant='outline-secondary'>Change Password</Button>
                 </Modal.Footer>
             </Modal>
             

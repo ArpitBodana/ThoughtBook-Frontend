@@ -67,7 +67,7 @@ function Home() {
                         activeClassName={style.activebtn}
                         marginPagesDisplayed={1}
                         />
-                        </Row>
+                    </Row>
                         
                        
                     
