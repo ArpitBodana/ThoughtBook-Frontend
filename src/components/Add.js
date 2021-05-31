@@ -24,16 +24,15 @@ function Add() {
    
     
     const handleSubmit =()=>{
-        console.log('addsubmit');
-        console.log(mytoken);
+        
         
         axios.post('https://chikubodana.pythonanywhere.com/api/v1/thoughtbook/generic/',{thought:thought,author:author,user:user},{ headers : {'Authorization' : `Token ${mytoken}`}}).then(()=>{
-            console.log(' Thought added successfully ');
+            
             // window.location.reload(false)
             save()
             setTimeout(Add,2000)
         }).catch(err=>{
-            console.log(err)
+            
             if(name==='ThoughtBook'){
             auth()
             setTimeout(Add,2000)

@@ -30,8 +30,7 @@ function Edit() {
    useEffect(()=>{
      
      data.map(data=>{data.user===name &&arr.push({thought:data.thought,user:data.user,id:data.id,date:data.date,author:data.author})})
-     console.log('newarr');
-     console.log(arr);
+     
     
     
 
@@ -40,18 +39,16 @@ function Edit() {
   
   const handleSave =(id,thoughtn,authorn,usern)=>{
   
-    console.log(thoughtn);
-    console.log(authorn);
-    console.log(id);
+   
     if(newauthor===null){
       
       axios.put(`https://chikubodana.pythonanywhere.com/api/v1/thoughtbook/generic2/${id}`,{thought:newthought,author:authorn,user:user},{ headers : {'Authorization' : `Token ${mytoken2}`}},)
-      .then(()=>{console.log('updated successfully ')
+      .then(()=>{
       // window.location.reload(false)
         updateit()
         setTimeout(Edit,2000)
     }).catch(err=>{
-      console.log(err)
+      
       if(usern!==name){
         auth()
     setTimeout(Edit,4000)
@@ -67,12 +64,12 @@ function Edit() {
     }
     else if(newthought===null){
       axios.put(`https://chikubodana.pythonanywhere.com/api/v1/thoughtbook/generic2/${id}`,{thought:thoughtn,author:newauthor,user:user},{ headers : {'Authorization' : `Token ${mytoken2}`}},)
-      .then(()=>{console.log('updated successfully ');
+      .then(()=>{
       // window.location.reload(false)
       updateit()
       setTimeout(Edit,2000)
     }).catch(err=>{
-      console.log(err)
+      
       if(usern!==name){
         auth()
     setTimeout(Edit,4000)
@@ -84,12 +81,12 @@ function Edit() {
     })
     }else{
       axios.put(`https://chikubodana.pythonanywhere.com/api/v1/thoughtbook/generic2/${id}`,{thought:newthought,author:newauthor,user:user},{ headers : {'Authorization' : `Token ${mytoken2}`}},)
-    .then(()=>{console.log('updated successfully ');
+    .then(()=>{
     // window.location.reload(false)
       updateit()
       setTimeout(Edit,2000)
   }).catch(err=>{
-    console.log(err)
+    
     if(usern!==name){
       auth()
   setTimeout(Edit,4000)
@@ -105,14 +102,14 @@ function Edit() {
   }
   const handleDelete =(id)=>{
       
-    console.log(id);
+    
     axios.delete(`https://chikubodana.pythonanywhere.com/api/v1/thoughtbook/generic2/${id}`,{ headers : {'Authorization' : `Token ${mytoken2}`}})
-    .then(()=>{console.log(`delted${id}`);
+    .then(()=>{
     // window.location.reload(false)
       deleteit()
       setTimeout(Edit,2000)
    }).catch(err=>{
-    console.log(err)
+    
     auth()
     setTimeout(Edit,4000)
    })

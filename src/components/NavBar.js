@@ -49,14 +49,14 @@ function NavBar() {
     
     const handleLogout =()=>{
         axios.post('https://chikubodana.pythonanywhere.com/api/logoutall/',null,{ headers : {'Authorization' : `Token ${mytoken3}`}}).then(()=>{
-        console.log('logout successfull');
         
-        console.log(mytoken3);
+        
+        
         check.dispatch2('update2')
         brand.dispatch3({type:'userlogout'})
         
        
-        }).catch(err=>console.log(err),console.log(`error in logout ${mytoken3}`))
+        }).catch(err=>err)
         
     }
     

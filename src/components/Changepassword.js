@@ -42,7 +42,7 @@ function Changepassword() {
 
                 }).catch(err=>{
                     wrong2()
-                    console.log(err);
+                    
                     setTimeout(change,2000)
 
                 })

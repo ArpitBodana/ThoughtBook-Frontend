@@ -36,8 +36,6 @@ function LoginModal() {
     const handleLogin =  ()=>{
         axios.post('https://chikubodana.pythonanywhere.com/api/login/',{username:username,password:password}).then((res)=>{
       settoken(res.data.token)
-      console.log(res.data.token);
-      console.log(gettoken);
       succes()
       tokenmanger.dispatch({type:'change',value:res.data.token})
       check.dispatch2('update')
@@ -46,7 +44,7 @@ function LoginModal() {
       
     
     }).catch(err=>{
-        console.log(err)
+        
         errors()
         setTimeout(login,3000)
         
@@ -57,10 +55,6 @@ function LoginModal() {
         
         
    useEffect(()=>{
-        console.log(tokenmanger.token);
-       
-        console.log(`token change using reducer ${gettoken}`);
-        console.log(tokenmanger.token);
        
 
     },[gettoken,tokenmanger])

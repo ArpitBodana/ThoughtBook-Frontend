@@ -30,12 +30,12 @@ function RegisterModal() {
                     setTimeout(register,2000)
                 }else{
                     axios.post('https://chikubodana.pythonanywhere.com/api/v1/register/',{username:username,password:password,email:email}).then(()=>{
-                        console.log('user created');
+                        
                         success()
                         setTimeout(login,3000)
             
                     }).catch(err=>{
-                        console.log(err)
+                        
                         name()
                         setTimeout(register,2000)
             

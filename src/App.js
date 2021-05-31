@@ -20,11 +20,11 @@ const reducer= (state,action)=>{
   switch(action){
     case 'change' :
       localStorage.setItem('tokencookie',action.value)
-      console.log('change of reducer working');
+      
       return {token:action.value}
     default :
       localStorage.setItem('tokencookie',action.value)
-      console.log('default is runing of token reducer ');
+      
       
       return {token:action.value}
       
@@ -35,13 +35,13 @@ const initialState2={
 const reducer2 =(state , action)=>{
   switch( action){
     case 'update':
-      console.log('update is working');
+      
       return {check:false}
     case 'update2':
-      console.log('update2 is working');
+      
       return {check:true}
     default:
-      console.log('default is working');
+      
       return {check:true}
 
   }
@@ -81,13 +81,11 @@ function App() {
       axios.get('https://chikubodana.pythonanywhere.com/api/v1/thoughtbook/generic/').then((res)=>{
       setloading(false)
       setPosts(res.data)
-      console.log(res.data);
-      console.log(posts);
       
     }).catch(err=>{
       setloading(false)
       setPosts(null)
-      console.log(err)})
+    })
    
 
   },[posts]) 
@@ -95,8 +93,7 @@ function App() {
   useEffect(()=>{
     var tokencookie =localStorage.getItem('tokencookie')
     var brandcookie = localStorage.getItem('brandcookie')
-    console.log('local stograge');
-    console.log(tokencookie,brandcookie);
+   
     if(tokencookie!==null){
       initialState2.check=true
     }

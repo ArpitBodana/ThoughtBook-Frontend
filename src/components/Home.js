@@ -13,7 +13,7 @@ function Home() {
    const loading = useContext(LoadingContext)
    
    const [pagenumber,setpagenumber] =useState(0)
-   const userperPage= 15;
+   const userperPage= 10;
    const pagesvisted = pagenumber*userperPage
    const count =data.slice(pagesvisted,pagesvisted+userperPage)
    const length=data.length

@@ -8,6 +8,7 @@ import Disc from './Disc'
 import Privacy from './Privacy'
 import Terms from './Terms'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
+import Aboutpolicy from './Aboutpolicy'
 
 
 
@@ -23,10 +24,11 @@ function Footer() {
                     <h5 className="  postion-realtive  mb-0 container-fluid bg-dark btn-lg text-center text-light">Usefull Links</h5>
                     
                     <Row  className="mb-0 container-fluid bg-dark btn-sm text-center text-light">
-                    <Col className='btn btn-dark btn-sm  text-light'><Link to="/Disc" onClick={()=>setcheck(false)}>Disclaimer</Link></Col>
-                    <Col className='btn btn-dark btn-sm'> <Link to="/Privacy" onClick={()=>setcheck(false)}>Privacy Policy</Link> </Col>
-                    <Col className='btn btn-dark btn-sm'> <Link to="/Terms" onClick={()=>setcheck(false)}>Terms And Conditions</Link> </Col>
-                    <Col className='btn btn-dark btn-sm'> <a href="https://docs.google.com/forms/d/e/1FAIpQLScFQZJtnnMKgl_2FPmVVpQbbbkamn_2BWKLCbMkrJ592YYQdA/viewform?usp=sf_link">Contact Us </a></Col>
+                    <Col className=' text-light'><Link to="/Disc" onClick={()=>setcheck(false)}>Disclaimer</Link></Col>
+                    <Col className=''> <Link to="/Privacy" onClick={()=>setcheck(false)}>Privacy Policy</Link> </Col>
+                    <Col className=''> <Link to="/Terms" onClick={()=>setcheck(false)}>Terms And Conditions</Link> </Col>
+                    <Col className='text-light'> <Link to="/Abou" onClick={()=>setcheck(false)}>About Us</Link> </Col> 
+                    <Col className=''> <a href="https://docs.google.com/forms/d/e/1FAIpQLScFQZJtnnMKgl_2FPmVVpQbbbkamn_2BWKLCbMkrJ592YYQdA/viewform?usp=sf_link">Contact Us </a></Col>
                     </Row>
                     <Row className='text-right'>
                         <Col>                    <Link to=""className="text-light text-center" hidden={check} onClick={()=>setcheck(true)}><AiOutlineCloseCircle color={'red'} size='3vh'/> Close</Link></Col>
@@ -36,6 +38,7 @@ function Footer() {
                     <Route exact path="/Disc"  component={Disc}/>
                     <Route path="/Privacy" component={Privacy}/>
                     <Route path="/Terms" component={Terms} />
+                    <Route path="/Abou" component={Aboutpolicy} />
                     <Redirect to="/" />
                 </Switch>   
             </Router>
