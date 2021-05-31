@@ -1,11 +1,11 @@
 import React from 'react'
-import {Accordion,Card,Button,Container,Row,Col,Alert} from 'react-bootstrap'
-import {RiErrorWarningFill} from 'react-icons/ri'
+import {Accordion,Card,Button,Container,Row,Col} from 'react-bootstrap'
+
+
 
 function About() {
     return (
         <div>
-            <Alert variant='danger' className='container text-center'><RiErrorWarningFill size='1.5em' className='text-warning mr-3'/> App is in development mode.</Alert>
             <Container>
                 
                 <Row>
@@ -68,7 +68,7 @@ function About() {
                             </Card>
                             <Card>
                                 <Card.Header>
-                                    <Accordion.Toggle as={Button} variant='link' eventKey='4'> Future Options?</Accordion.Toggle>
+                                    <Accordion.Toggle as={Button} variant='link' eventKey='4'> Future Updates?</Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="4">
                                     <Card.Body>In Future ,there may be Forget Password,Delete Registered Id and more options will be available.</Card.Body>

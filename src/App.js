@@ -5,21 +5,27 @@ import {Container,Row,Col} from 'react-bootstrap'
 import NavBar from './components/NavBar';
 import React,{useEffect,useState,useReducer } from  'react'
 import axios from 'axios'
-import { GiBlackBook} from "react-icons/gi";
+
+
 export const MyContext = React.createContext()
 export const LoadingContext = React.createContext()
 export const TokenContext = React.createContext()
 export const CheckContext = React.createContext()
 export const BrandContext = React.createContext()
 
-const initialState=''
+const initialState={
+  token:''
+}
 const reducer= (state,action)=>{
   switch(action){
-    case 'change':
+    case 'change' :
+      localStorage.setItem('tokencookie',action.value)
       console.log('change of reducer working');
       return {token:action.value}
     default :
-      console.log('default is runing of reducer');
+      localStorage.setItem('tokencookie',action.value)
+      console.log('default is runing of token reducer ');
+      
       return {token:action.value}
       
   }
@@ -44,9 +50,16 @@ const initialState3={brand:'ThoughtBook'}
 const reducer3=(state,action)=>{
   switch(action.type){
     case 'userlogin':
+      localStorage.setItem('brandcookie',action.value)
+      
+      
       return {brand:action.value}
     case 'userlogout':
+      localStorage.removeItem('brandcookie')
+      localStorage.removeItem('tokencookie')
+     
       return {brand:'ThoughtBook'}
+     
     default:
       return {brand:initialState3}
   }
@@ -78,15 +91,25 @@ function App() {
    
 
   },[posts]) 
+
+  useEffect(()=>{
+    var tokencookie =localStorage.getItem('tokencookie')
+    var brandcookie = localStorage.getItem('brandcookie')
+    console.log('local stograge');
+    console.log(tokencookie,brandcookie);
+    if(tokencookie!==null){
+      initialState2.check=true
+    }
+
+  })
  
   return (
     <div className="App" >
-      
       <Container fluid className={style.headingback}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={12}>
            
-           <h2 className={style.heading}>ThoughtBook <GiBlackBook /></h2>
+           <h2 className={style.heading}>MyThoughtBook</h2>
            
           </Col>
         </Row>
@@ -102,22 +125,7 @@ function App() {
       </TokenContext.Provider>
       </CheckContext.Provider>
       
-      </BrandContext.Provider>
-      
-
-       
-       
-   
-    
-    
-       
-        
-     
-      
-      
-      
-      
-      
+      </BrandContext.Provider> 
     </div>
   );
 }

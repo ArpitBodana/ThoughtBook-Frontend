@@ -39,7 +39,7 @@ function LoginModal() {
       console.log(res.data.token);
       console.log(gettoken);
       succes()
-      
+      tokenmanger.dispatch({type:'change',value:res.data.token})
       check.dispatch2('update')
       brand.dispatch3({type:'userlogin' ,value:username})
       setTimeout(home,2000)
@@ -58,7 +58,7 @@ function LoginModal() {
         
    useEffect(()=>{
         console.log(tokenmanger.token);
-        tokenmanger.dispatch({type:'change',value:gettoken})
+       
         console.log(`token change using reducer ${gettoken}`);
         console.log(tokenmanger.token);
        
@@ -75,7 +75,7 @@ function LoginModal() {
                     <Modal.Title>Log In </Modal.Title>
                 </Modal.Header >
                 <Modal.Body>
-                    <Form >
+                    <Form>
                         <Form.Group>
                             <Form.Label>UserName</Form.Label>
                             <Form.Control type='text' validated onChange={e=>{setusername(e.target.value)}}placeholder='Your UserName' />
@@ -85,6 +85,7 @@ function LoginModal() {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type='password'  onChange={e=>{setpassword(e.target.value)}} placeholder="Password" />
                         </Form.Group>
+                        
                     </Form>
                     
 

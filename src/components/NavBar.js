@@ -1,6 +1,6 @@
 import React ,{useContext} from 'react'
 import {Nav, Button,Navbar, NavDropdown} from 'react-bootstrap'
-import {BrowserRouter as Router,Route,Switch } from 'react-router-dom'
+import {BrowserRouter as Router,Route,Switch ,Redirect} from 'react-router-dom'
 import About from './About'
 import Contact from './Contact'
 import Home from './Home'
@@ -35,6 +35,7 @@ import {RiLockPasswordFill} from "react-icons/ri";
 import {CgAdd} from "react-icons/cg";
 import {MdModeEdit} from "react-icons/md";
 import {IoPersonAddSharp} from "react-icons/io5";
+
 function NavBar() {
     const token =useContext(TokenContext)
     const mytoken3 = token.token.token
@@ -82,7 +83,7 @@ function NavBar() {
                         </NavDropdown>
                         
                         <LinkContainer to="/about">
-                            <Nav.Link hidden={false}  >Info <TiInfoLarge size='1.5em'/></Nav.Link>
+                            <Nav.Link hidden={false}  >How To Use? <TiInfoLarge size='1.5em'/></Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/contact">
                             <Nav.Link hidden>Contact</Nav.Link>
@@ -105,8 +106,7 @@ function NavBar() {
                             
                             <NavDropdown.Item hidden={valuecheck} ><Button onClick={handleLogout}>Logout <HiLogout size='1.5em'/> </Button></NavDropdown.Item>
 
-                        </NavDropdown >
-                        
+                        </NavDropdown >                        
                        
                         
                         
@@ -138,6 +138,10 @@ function NavBar() {
                     <Route path='/changedone' component={ChangeSuc}></Route>
                     <Route path='/unauthorized' component={Unauthorized}></Route>
                     <Route path='/addwarn' component={Addwarn}></Route>
+                    
+
+                    <Redirect to="/" />
+                    
 
                 </Switch>
             </Router>

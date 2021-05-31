@@ -3,10 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Laila:wght@500&display=swap');
 .Thought{
     background: linear-gradient(45deg,white,wheat);
-    color:darkslategray;
+    color:black;
     
     font-family: 'Laila', sans-serif;
     padding: 0.5rem ; 
+    
+    /* background: rgba(255,255,255,0.4); */
+    /* backdrop-filter: blur(2px); */
     
     
    
@@ -26,6 +29,9 @@
     box-shadow: 0 2px 5px 3px rgba(0,0,0,0.6);
     transition-property: zoom ,rotate;
     transition-duration: 2s;
+   
+    
+    
   
 }
 .box:hover{
@@ -88,7 +94,7 @@
     background-clip: initial;
     /* color:#00FF7F; */
    
-    background: -webkit-linear-gradient(rgb(11, 236, 11), yellow);
+    background: -webkit-linear-gradient(red , red );
     -webkit-background-clip: text;
     -webkit-text-fill-color:white;
     font-weight: 900;
@@ -102,28 +108,32 @@
 @media screen and (min-width:  900px){
     .heading {
         font-size: 4.5rem;
-        color:#FFF94C;
+        color:red ;
         
     }
 }
 @media screen and (min-width:  650px) and (max-width:899px){
     .heading {
         font-size: 4rem;
-        color: #004FF9;
+        color: red ;
         
     }
 }
 @media screen and (min-width: 400px) and (max-width:649px) {
     .heading {
-        font-size: 2.7rem;
-        color: #FFF94C;
+        font-size: 2.5rem;
+        color: red ;
         
     }
 }
 @media screen and (min-width: 200px) and (max-width:399px) {
     .heading {
-        font-size: 1.8rem;
-        color:#004FF9 ;
+        font-size: 1.5rem;
+        color:red  ;
+        
+    };
+    .brandname{
+        font-size: 0.5rem;
         
     }
 }
@@ -137,4 +147,5 @@
     font-size: 3rem;
     
 }
+
 
